@@ -1,0 +1,16 @@
+CREATE DATABASE blog;
+CREATE USER blogger IDENTIFIED BY 'blogger';
+GRANT ALL ON blog.* TO blogger;
+FLUSH PRIVILEGES;
+
+CREATE TABLE blog.post
+(
+    id INT(11),
+    autor VARCHAR(50),
+    texto VARCHAR(255)
+);
+
+INSERT INTO blog.post VALUES (1, "ramon", "Los null son muy malos");
+INSERT INTO blog.post VALUES (2, "antonio", "MyBatis mola");
+INSERT INTO blog.post VALUES (3, "ramon", "Hibernate es una chusta");
+COMMIT;
